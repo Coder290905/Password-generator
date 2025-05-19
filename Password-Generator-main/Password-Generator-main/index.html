@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="container">
+                <div id="generator-container">
+                    <header>Password Generator</header>
+                    <div id="generator">
+                        <div id="password-container">
+                            <p id="password" class="password">
+                                Password
+                            </p>
+                            <button class="copy-btn">
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+                        <p id="strength">Password Strength: <span id="power"></span></p>
+                        <p id="length">Password Length: <span id="pass-length">10</span></p>
+                        <input type="range" min="1" max="25" id="slider" value="10">
+                        <p id="settings">Password Settings:</p>
+                        <form id="options">
+                            <label for="lowercase">
+                                <input type="checkbox" id="lowercase" required checked>
+                                Lowercase (a-z)
+                            </label>
+                            <label for="uppercase">
+                                <input type="checkbox" id="uppercase" required>
+                                Uppercase (A-Z)
+                            </label>
+                            <label for="numbers">
+                                <input type="checkbox" id="numbers" required>
+                                Numbers (0-9)
+                            </label>
+                            <label for="symbols">
+                                <input type="checkbox" id="symbols" required>
+                                Symbols (!-$^+)
+                            </label>
+                            <label for="duplicate">
+                                <input type="checkbox" id="duplicate">
+                                Exclude Duplicate
+                            </label>
+                            <label for="space">
+                                <input type="checkbox" id="space">
+                                Include Spaces
+                            </label>
+                        </form>
+                        <button type="button" id="generate-btn">Generate Password</button>
+                    </div>
+                </div>
+                <div id="storage-container">
+                    <header>Recent Suggestions</header>
+                    <div id="storage">
+                        <ul id="recents">
+                                
+                        </ul>
+                        <div id="no-item">
+                            <p>No recent passwords</p>
+                        </div>
+                        <button type="button" id="delete-all-btn">Delete All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
